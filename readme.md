@@ -6,3 +6,8 @@ https://svelte.dev/
 
 Backend - GO?
 https://svelte.dev/
+
+What are you working on?
+
+Collin - Boilerplate for svelte
+Tom - Get documenation and references ready
