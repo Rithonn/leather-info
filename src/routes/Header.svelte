@@ -8,7 +8,7 @@
 
 
 <header>
-	<Navbar color="primary" let:NavContainer fluid>
+	<Navbar let:NavContainer fluid>
 		<NavContainer class="ml-0 px-10 justify-between md:justify-start">
 			<NavBrand >
 				<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Leather Repo</span>
