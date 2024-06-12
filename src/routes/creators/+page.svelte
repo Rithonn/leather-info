@@ -1,4 +1,4 @@
-<script>
+<script lang='ts'>
 	import CreatorList from "./CreatorList.svelte";
 </script>
 
