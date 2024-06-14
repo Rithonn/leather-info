@@ -3,8 +3,8 @@
 	export let videoLink: string;
 	export let videoTitle: string;
 
-	$:videoId = videoLink.split('=')[1]
-	$:thumbnailLink = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
+	const videoId = videoLink.split('=')[1]
+	const thumbnailLink = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
 	// These two links are to the thumbnails for a youtube video
 	// https://i.ytimg.com/vi/{VIDEO ID}/hqdefault.jpg
 	// https://i.ytimg.com/vi/{VIDEO ID}/maxresdefault.jpg
