@@ -1,18 +1,14 @@
 <script lang="ts">
 	//https://www.youtube.com/watch?v=ADmWZ0E4YiM
-	export let videoLink: string;
+	export let videoLink: string; 
 	export let videoTitle: string;
-
-	const videoId = videoLink.split('=')[1]
-	const thumbnailLink = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
-	// These two links are to the thumbnails for a youtube video
-	// https://i.ytimg.com/vi/{VIDEO ID}/hqdefault.jpg
-	// https://i.ytimg.com/vi/{VIDEO ID}/maxresdefault.jpg
+	export let thumbnail: string | null = null;
+	export let thumbnailLg: string;
 </script>
 
 <a class="flex flex-col" href={videoLink} target="_blank">
 	{#if videoLink}
-		<img class="w-[305px] h-[172px] rounded-lg" src={thumbnailLink} alt="Video"/>
+		<img class="w-[305px] h-[172px] rounded-lg" src={thumbnail} alt="Video"/>
 	{:else}
 		<div class="w-[305px] h-[172px] rounded-lg skeleton"></div>
 	{/if}

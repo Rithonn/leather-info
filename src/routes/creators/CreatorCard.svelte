@@ -1,33 +1,31 @@
 <script lang='ts'>
+	import type { YouTubeCreator } from '$lib/interfaces/ContentCreator';
+
 	//import pfpplaceholder from '$lib/images/placeholder-pfp.jpg';
 	import CreatorVideo from './CreatorVideo.svelte';
-	const profilePicture = '';
-
-	const link = 'https://www.youtube.com/@80ProofGoods';
-	const name = '80 Proof Goods';
-	const tags = [''];
+	export let creator: YouTubeCreator;
 
 </script>
 
-<div class="bg-white p-5 rounded">
+<div class="bg-white mt-3 p-5 rounded">
 	<div class="flex flex-col gap-5">
-		<div class="flex gap-3">
-			{#if profilePicture}
-				<img class="w-20 h-20 rounded-full" src={profilePicture} alt="placeholderpfp" />
+		<a href={creator.link} class="flex gap-3" target="_blank">
+			{#if creator.profilePicture}
+				<img class="w-20 h-20 rounded-full" src={creator.profilePicture} alt="placeholderpfp" />
 			{:else}
 				<div class="w-20 h-20 rounded-full skeleton"></div>
 			{/if}
 
-			{#if name}
-				<span class="self-center">{name}</span>
+			{#if creator.displayName}
+				<span class="self-center">{creator.displayName}</span>
 			{:else}
 				<div class="w-40 h-4 self-center rounded-lg skeleton"></div>
 			{/if}
-		</div>
+		</a>
 		<div class="flex gap-3 justify-around">
-			<CreatorVideo videoLink={'https://www.youtube.com/watch?v=ADmWZ0E4YiM'} videoTitle={'The Art of Making a Leather Carry-On Duffle Bag'}/>
-			<CreatorVideo videoLink={'https://www.youtube.com/watch?v=Zrigh2w3TIU'} videoTitle={'Unboxing 5 HIDES of Our Most Popular Leather - English Tan Harvest'}/>
-			<CreatorVideo videoLink={'https://www.youtube.com/watch?v=9TjuWlv4_1Q'} videoTitle={'Leather CORDS WRAPS for Cable Management!'}/>
+			{#each creator.videos as video}
+				<CreatorVideo videoLink={video.link} videoTitle={video.title} thumbnail={video.thumbnail} thumbnailLg={video.thumbnailLg}/>
+			{/each}
 		</div>
 	</div>
 </div>

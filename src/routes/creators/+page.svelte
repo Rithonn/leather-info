@@ -1,5 +1,7 @@
 <script lang='ts'>
 	import CreatorList from "./CreatorList.svelte";
+	export let data;
+
 </script>
 
 
@@ -9,6 +11,10 @@
 </svelte:head>
 
 <div class="">
-	<CreatorList />
+	{#await data.streamed.creators}
+		<span> loading</span>
+	{:then creators}
+		<CreatorList creators={creators}/>
+	{/await}
 </div>
 
