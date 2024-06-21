@@ -1,8 +1,7 @@
 <script lang='ts'>
 	import type { YouTubeCreator } from '$lib/interfaces/ContentCreator';
-
-	//import pfpplaceholder from '$lib/images/placeholder-pfp.jpg';
 	import CreatorVideo from './CreatorVideo.svelte';
+	
 	export let creator: YouTubeCreator;
 
 </script>
